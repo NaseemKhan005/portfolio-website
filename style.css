@@ -62,3 +62,68 @@ nav ul li a:hover::after {
 .header-text h1 span {
   color: #ff004f;
 }
+
+/* New sector */
+
+#about {
+  padding: 80px 0px;
+  color: #ababab;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex: wrap;
+}
+.about-col-1 {
+  flex-basis: 35%;
+}
+.about-col-1 img {
+  width: 100%;
+  border-radius: 15px;
+}
+.about-col-2 {
+  flex-basis: 60%;
+}
+.sub-title {
+  font-size: 60px;
+  font-weight: 600px;
+  color: #fff;
+}
+.tab-title {
+  display: flex;
+  margin: 20px 0 40px 0;
+}
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+.tab-links::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: #ff004f;
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  transition: 0.5s;
+}
+.tab-links:hover::after {
+  width: 100%;
+}
+.tab-content ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+.tab-content ul li span {
+  color: hsl(341, 88%, 47%);
+  font-size: 14px;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active-tab {
+  display: block;
+}
