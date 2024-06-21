@@ -89,7 +89,7 @@ nav ul li a:hover::after {
   font-weight: 600px;
   color: #fff;
 }
-.tab-title {
+.tab-titles {
   display: flex;
   margin: 20px 0 40px 0;
 }
@@ -113,17 +113,17 @@ nav ul li a:hover::after {
 .tab-links:hover::after {
   width: 100%;
 }
-.tab-content ul li {
+.tab-contents ul li {
   list-style: none;
   margin: 10px 0;
 }
-.tab-content ul li span {
+.tab-contents ul li span {
   color: hsl(341, 88%, 47%);
   font-size: 14px;
 }
-.tab-content {
+.tab-contents {
   display: none;
 }
-.tab-content.active-tab {
+.tab-contents.active-tab {
   display: block;
 }
