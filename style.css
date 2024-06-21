@@ -91,7 +91,7 @@ nav ul li a:hover::after {
 }
 .tab-titles {
   display: flex;
-  margin: 20px 0 40px 0;
+  margin: 20px 0 40px;
 }
 .tab-links {
   margin-right: 50px;
@@ -110,7 +110,7 @@ nav ul li a:hover::after {
   bottom: -7px;
   transition: 0.5s;
 }
-.tab-links:hover::after {
+.tab-links.active-link::after {
   width: 100%;
 }
 .tab-contents ul li {
