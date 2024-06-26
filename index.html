@@ -19,11 +19,11 @@
         <nav>
           <img src="./images/logo.png" class="logo>" />
           <ul id="sidemenu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
             <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
           </ul>
           <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -49,7 +49,7 @@
           <div class="about-col-2">
             <h1 class="sub-title">About Me</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              Lorem ipsum dolor sit amet consectetur adipist elit. Suscipit
               totam non sit voluptates possimus delectus eligendi illo soluta
               quas, ducimus blanditiis voluptatem officia inventore
               consequuntur, beatae, vitae nesciunt aperiam quam!
@@ -202,13 +202,15 @@
             </div>
             <a href="./images/my-cv.pdf" Downlode class="btn btn2">Downlode CV</a>
           </div>
+          
           <div class="contact-right">
-            <form>
+            <form name="submit-to-google-sheet">
               <input type="text" name="Name" placeholder="Enter your name" required>
-              <input type="text" name="Email" placeholder="Enter your name" required>
+              <input type="text" name="Email" placeholder="Enter your Email" required>
               <textarea name="Massage" row="6" placeholder="enter your massmage"></textarea>
               <button type="submit" class="btn btn2">Submit</button>
             </form>
+            <span id="msg"></span>
           </div>
         </div>
       </div>
@@ -238,12 +240,30 @@
       const sidemenu = document.getElementById("sidemenu")
       const openmenu = () => {
         sidemenu.style.right = "0px";
-        // console.log("open");	
       }
       function closemenu() {
         sidemenu.style.right = "-200px";
       }
 
+    </script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxe_xmYpoyp8eqkezooqD8fr6dQu0RdkHPQFtIBlgvQe5JN2-YHULc91XK8-icl_EXd/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById('msg')
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML = "your massage is successfully submited"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            
+            },5000)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
     </script>
   </body>
 </html>

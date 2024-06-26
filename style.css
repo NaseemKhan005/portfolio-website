@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #080808;
   color: white;
@@ -334,6 +337,10 @@ nav .fa-solid {
     display: block;
     font-size: 25px;
   }
+  .row {
+    flex-direction: column;
+  }
+
   nav ul {
     background: #ff004f;
     position: fixed;
@@ -355,4 +362,34 @@ nav .fa-solid {
     left: 25px;
     cursor: pointer;
   }
+  .sub-title {
+    font-size: 40px;
+  }
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+  .about-col-1 {
+    margin-top: 20px;
+  }
+  .about-col-2 {
+    font-size: 14px;
+  }
+  .tab-links {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+  }
+  .copyright {
+    font-size: 14px;
+  }
+}
+#msg {
+  color: yellow;
+  margin-top: -30px;
+  margin-left: 20px;
+  display: block;
 }
